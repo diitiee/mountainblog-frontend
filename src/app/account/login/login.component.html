@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="container w-75">
+    <div class="row align-items-center" style="background: url(https://images.pexels.com/photos/3022417/pexels-photo-3022417.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/1058958/pexels-photo-1058958.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/629167/pexels-photo-629167.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/673020/pexels-photo-673020.jpeg?auto=compress&cs=tinysrgb&w=600https://images.pexels.com/photos/725255/pexels-photo-725255.jpeg?auto=compress&cs=tinysrgb&w=600);object-fit: cover;height: 100%;">
+      <div>
+        <div class="d-flex align-items-center flex-column">
+          <form [formGroup]="loginForm" class="m-5 p-3"(ngSubmit)="login()">
+            <h1 class="text-center m-3 text-dark mt-2">LOGIN HERE</h1>
+      
+            <!-- Email input -->
+            <div class="form-outline mb-4 mt-2">
+              <input type="email" class="form-control" id="form1Example2" formControlName="email" placeholder="Enter your Email">
+              <!-- <label class="form-label" for="form1Example2">Email</label> -->
+            </div>
+            <div class="text-danger fw-bolder" *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+              *Invalid Email
+            </div>
+      
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" class="form-control" id="form1Example3" formControlName="password" placeholder="Enter your Password">
+              <!-- <label class="form-label" for="form1Example3">Password</label> -->
+              <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row mt-3 " >
+                <a href="register" class="link-dark" style="background-color: rgba(240, 248, 255, 0.482);text-align: center;text-decoration: none;font-weight: bolder;">Don't have an account?</a>
+              </div>
+            </div>
+            <div class="text-danger fw-bolder" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+              *Invalid Password
+            </div>
+      
+            <!-- Submit button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-dark btn-block form-control">Login</button>
+            </div>
+          </form>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
